@@ -3,11 +3,11 @@
 Please rate yourself from 1 (little/no knowledge) to 5 (expert.) If you rate yourself 3 or above, please be sure to consider if you are still proficient if you have not used the technology in the last 24 months.
 
 * Java/C#:
-  *2* It's been years since I've used C#
+    *2* It's been years since I've used C#
 * Javascript:
-  *3*
+    *3*
 * C/C++/Go:
-  *1*
+    *1*
 * Ruby:
   *4*
 * Python:
