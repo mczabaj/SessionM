@@ -1,0 +1,17 @@
+skinparam backgroundColor #EEEBDC
+
+actor User #red
+
+box "accounts.mm.com" #LightBlue
+  participant UI
+  participant Server
+end box
+
+box "saas" #White
+  participant Okta
+end box
+
+box "fabric" #LightGreen
+  participant "Customer API" as CAPI
+  participant MIM
+end box
