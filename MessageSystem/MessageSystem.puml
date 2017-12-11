@@ -1,0 +1,46 @@
+@startuml
+
+!include Actors.puml
+
+group Process Of Users
+  Input -> Ingest: List of Users sent
+  Ingest -> Ingest: Save List of Users
+  Ingest ->o Input: Received
+end
+
+loop Process List of Users
+  Ingest -> DB: Store users to DB
+  DB -> Ingest: Save successful
+else If save fails (service down)
+  note right of Ingest
+    Backup process takes over
+  end note
+  Ingest -> DB: Get last user saved
+  DB -> Ingest: last user info, restart loop \nwhere it was left off
+end
+
+group Batch process
+  loop until users = 100 or "30 seconds pass"
+    DB <-> Batch: Get user with message and\nmark as being processed
+  end
+  Batch -> API: Send batch to Remote Systems API
+  alt
+    API ->o Batch: Successfully Received
+    note left: go back to batch processing\n(do it all again)
+  else
+    API -x Batch: Failed to Received
+    Batch -> API: retry
+    alt successful
+      API ->o Batch
+    else fail
+      API -x Batch
+      Batch -> DB: reset as unprocessed (to be picked up again later)
+    end
+  end
+end
+
+group Clean Up
+  Batch <-> DB: Check for "in process" records that\nhave not been processed (hardware failure?)\nUpdate back to unprocessed
+end
+
+@enduml

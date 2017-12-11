@@ -1,17 +1,23 @@
 skinparam backgroundColor #EEEBDC
 
-actor User #red
+== Messaging System ==
 
-box "accounts.mm.com" #LightBlue
-  participant UI
-  participant Server
+box "List of Users" #LightBlue
+  participant Input
 end box
 
-box "saas" #White
-  participant Okta
+box "Ingest Process" #White
+  collections Ingest
 end box
 
-box "fabric" #LightGreen
-  participant "Customer API" as CAPI
-  participant MIM
+box "Message Store" #Yellow
+  database DB
+end box
+
+box "Batch Process" #White
+  collections Batch
+end box
+
+box "Remote System" #LightGreen
+  participant API
 end box
