@@ -1,3 +1,21 @@
+## Design
+
+Design a messaging system that:
+
+  * The system takes as an input a list of users, in the millions
+  * You will be interfacing with a remote system that takes messages in batches of up-to 100 users.
+  * The system needs to continue operating with as little impact if any physical machines fails (aka undelivered messages)
+
+Within this repo you will find some UML for the design of the messaging system. It is written in `.puml` files. These files can be **viewed** in the Atom IDE with the [plantuml-viewer](https://atom.io/packages/plantuml-viewer) package plugin. Once installed, go to a puml file and hit:
+
+    control + alt/option + p
+
+And it will bing up a split view to the right.
+
+#### Discuss tradeoffs if any
+
+  TODO: Insert design discussion topics (tradeoffs, etc.) here
+
 ## Code Example
 
 In Javascript, given an array of numbers, return the sum of the square of the numbers, but only if the number is greater than 5.
@@ -33,52 +51,33 @@ const server = http.createServer((req, res) => {
 
 Please rate yourself from 1 (little/no knowledge) to 5 (expert.) If you rate yourself 3 or above, please be sure to consider if you are still proficient if you have not used the technology in the last 24 months.
 
-* Java/C#:
-
-    __2__ It's been years since I've used C#
-
-* Javascript:
-
-  __3__
-
-* C/C++/Go:
-  __1__
-* Ruby:
-    __4__
-* Python:
-  *3*
-* Bash Scripts:
-  *2*
-* HTML/CSS/HTTP Protocol/TLS/Browser developer tools:
-  *3*
-* REST:
-  *4*
-* JSON:
-  *4*
-* XML:
-  *4*
-* SQL:
-  *3*
-* NoSQL systems (please list which):
-  __3__ Datomic (query language of DataLog)
-* Linux / Linux command line / System Administration:
-  __3__
-* AWS Console and Core Apps:
-
-  __3__ There's just so much!
-
-* Docker:
-  *3* Docker, docker-compose, and Vagrant
-* Distributed systems:
-  *2*
-* Object Oriented Programming Fundamentals:
-  *4*
-* Functional Programing Fundamentals:
-  *4* I've been using Clojure the last 18 months
-* Android:
-  *1* I've done no development for Andriod
-* iOS:
-  *1* or iOS
+* Java/C#: __2__
+    It's been years since I've used C#. I can read Java, but have spent little to no time writing it.
+* Javascript: __3__
+* C/C++/Go: __1__
+* Ruby: __4__
+* Python: __3__
+* Bash Scripts: __2__
+* HTML/CSS/HTTP Protocol/TLS/Browser developer tools: __3__
+* REST: __4__
+* JSON: __4__
+* XML:  __4__
+* SQL:  __3__
+* NoSQL systems (please list which): __3__
+    Datomic (query language of DataLog)
+* Linux / Linux command line / System Administration: __3__
+* AWS Console and Core Apps: __3__
+    There's just so much!
+* Docker: __3__
+    Docker, docker-compose, and Vagrant
+* Distributed systems: __1__
+* Object Oriented Programming Fundamentals: __4__
+* Functional Programing Fundamentals: __4__
+    I've been using Clojure the last 18 months
+* Android: __1__
+    I've done no development for Andriod mobile
+* iOS: __1__
+    or iOS mobile
 
 ## Open Source
 
