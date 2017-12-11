@@ -14,7 +14,7 @@ And it will bing up a split view to the right.
 
 #### Discuss tradeoffs if any
 
-  TODO: Insert design discussion topics (tradeoffs, etc.) here
+  With this design, there is a potential bottle neck for processing at the ingestion point. It really depends on the needs of the system for performance though. If there is not super made rush for getting all users and their messages in and through the system, it might not be an issue. If it does need to be faster, instead of "saving" the inout file before processing it sequentially. It could be opened, lazily, read in on a stream, and batched off to additionally processes (threads) to be ingested quicker. 
 
 ## Code Example
 
