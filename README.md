@@ -1,15 +1,50 @@
+## Code Example
+
+In Javascript, given an array of numbers, return the sum of the square of the numbers, but only if the number is greater than 5.
+
+The code below is contained in this repo in the `app.js` file. You can run it locally to see it working by executing `node app.js` from the SessionM directory (assuming you have node installed).
+
+```javascript
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+var data = [0,1,3,5,32,45,50,75,80,99,120];
+
+function checkGreaterThan(number) {
+    return number > 5;
+}
+
+function numberSquared(number) {
+    return Math.pow(number,2);
+}
+
+function getSum(total, number) {
+    return total + number;
+}
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end(data.filter(checkGreaterThan).map(numberSquared).reduce(getSum).toString());
+});
+```
+
 ## Technical Rating
 
 Please rate yourself from 1 (little/no knowledge) to 5 (expert.) If you rate yourself 3 or above, please be sure to consider if you are still proficient if you have not used the technology in the last 24 months.
 
 * Java/C#:
-    *2* It's been years since I've used C#
+
+    __2__ It's been years since I've used C#
+
 * Javascript:
-    *3*
+
+  __3__
+
 * C/C++/Go:
-    *1*
+  __1__
 * Ruby:
-  *4*
+    __4__
 * Python:
   *3*
 * Bash Scripts:
@@ -25,11 +60,13 @@ Please rate yourself from 1 (little/no knowledge) to 5 (expert.) If you rate you
 * SQL:
   *3*
 * NoSQL systems (please list which):
-  *3* Datomic (query language of DataLog)
+  __3__ Datomic (query language of DataLog)
 * Linux / Linux command line / System Administration:
-  *3*
+  __3__
 * AWS Console and Core Apps:
-  *3* There's just so much!
+
+  __3__ There's just so much!
+
 * Docker:
   *3* Docker, docker-compose, and Vagrant
 * Distributed systems:
